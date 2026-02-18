@@ -17,9 +17,14 @@
 
 Copy-paste **one** of the following into your terminal:
 
-**macOS / Linux:**
+**macOS:**
 ```bash
 git clone https://github.com/Nspaz/Mohktobrowser.git && open Mohktobrowser/index.html
+```
+
+**Linux:**
+```bash
+git clone https://github.com/Nspaz/Mohktobrowser.git && xdg-open Mohktobrowser/index.html
 ```
 
 **Windows (PowerShell):**

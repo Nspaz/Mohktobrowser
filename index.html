@@ -222,26 +222,26 @@
 
     <script>
         // Mokh types that can be collected
-        var mokhTypes = ['🍪', '🥠', '🍩', '🧁', '🍰', '🎂', '🥧', '🍫', '🍬', '🍭'];
+        const mokhTypes = ['🍪', '🥠', '🍩', '🧁', '🍰', '🎂', '🥧', '🍫', '🍬', '🍭'];
 
         // State
-        var mokhCount = 0;
-        var mokhCollection = [];
-        var currentMokhIndex = 0;
+        let mokhCount = 0;
+        let mokhCollection = [];
+        let currentMokhIndex = -1;
 
         // DOM elements
-        var currentMokhEl = document.getElementById('currentMokh');
-        var mokhCountEl = document.getElementById('mokhCount');
-        var takeMokhBtn = document.getElementById('takeMokhBtn');
-        var browseMokhsBtn = document.getElementById('browseMokhsBtn');
-        var mokhCollectionEl = document.getElementById('mokhCollection');
-        var collectionGridEl = document.getElementById('collectionGrid');
+        const currentMokhEl = document.getElementById('currentMokh');
+        const mokhCountEl = document.getElementById('mokhCount');
+        const takeMokhBtn = document.getElementById('takeMokhBtn');
+        const browseMokhsBtn = document.getElementById('browseMokhsBtn');
+        const mokhCollectionEl = document.getElementById('mokhCollection');
+        const collectionGridEl = document.getElementById('collectionGrid');
 
         // Load saved state from localStorage
         function loadState() {
             try {
-                var savedCount = localStorage.getItem('mokhCount');
-                var savedCollection = localStorage.getItem('mokhCollection');
+                const savedCount = localStorage.getItem('mokhCount');
+                const savedCollection = localStorage.getItem('mokhCollection');
                 if (savedCount) {
                     mokhCount = parseInt(savedCount, 10);
                     mokhCountEl.textContent = mokhCount;
@@ -273,7 +273,7 @@
 
         // Take a mokh
         function takeMokh() {
-            var mokh = currentMokhEl.textContent;
+            const mokh = currentMokhEl.textContent;
 
             currentMokhEl.classList.add('taken');
 
@@ -308,7 +308,7 @@
         function updateCollectionDisplay() {
             collectionGridEl.innerHTML = '';
             if (mokhCollection.length === 0) {
-                var p = document.createElement('p');
+                const p = document.createElement('p');
                 p.style.gridColumn = '1/-1';
                 p.style.textAlign = 'center';
                 p.style.color = '#999';
@@ -316,8 +316,8 @@
                 collectionGridEl.appendChild(p);
                 return;
             }
-            for (var i = 0; i < mokhCollection.length; i++) {
-                var mokhEl = document.createElement('div');
+            for (let i = 0; i < mokhCollection.length; i++) {
+                const mokhEl = document.createElement('div');
                 mokhEl.className = 'collection-item';
                 mokhEl.textContent = mokhCollection[i];
                 mokhEl.title = 'Mokh #' + (i + 1);
