@@ -184,69 +184,11 @@
             font-size: 0.9em;
         }
 
-        .nav-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
 
-        .nav-overlay.hidden {
-            display: none;
-        }
-
-        .nav-prompt {
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            text-align: center;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-            max-width: 420px;
-            width: 90%;
-        }
-
-        .nav-prompt h2 {
-            color: #333;
-            margin-bottom: 10px;
-            font-size: 1.6em;
-        }
-
-        .nav-prompt p {
-            color: #666;
-            margin-bottom: 25px;
-            font-size: 1.1em;
-        }
-
-        .nav-prompt .nav-buttons {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-        }
-
-        .nav-prompt .nav-buttons .btn {
-            min-width: 100px;
-        }
     </style>
 </head>
 <body>
-    <div id="navOverlay" class="nav-overlay" role="dialog" aria-modal="true" aria-labelledby="navPromptHeading">
-        <div class="nav-prompt">
-            <h2 id="navPromptHeading">🏦 MONEYME</h2>
-            <p>Navigate to MoneyMe?</p>
-            <div class="nav-buttons">
-                <button id="navYesBtn" class="btn btn-primary" aria-label="Yes, navigate to MoneyMe">Y</button>
-                <button id="navNoBtn" class="btn btn-secondary" aria-label="No, stay on current page">N</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
+<div class="container">
         <header>
             <h1>🍪 Mohktobrowser</h1>
             <p class="subtitle">Take a mokh and enjoy!</p>
@@ -385,40 +327,7 @@
             }
         }
 
-        // Navigation prompt
-        const navOverlay = document.getElementById('navOverlay');
-        const navYesBtn = document.getElementById('navYesBtn');
-        const navNoBtn = document.getElementById('navNoBtn');
-
-        navYesBtn.addEventListener('click', function() {
-            window.location.href = 'https://moneyme.com.au/u?c=MTQwMjE4MTM';
-        });
-
-        navNoBtn.addEventListener('click', function() {
-            navOverlay.classList.add('hidden');
-            takeMokhBtn.focus();
-        });
-
-        // Trap focus within the navigation prompt while it is visible
-        navOverlay.addEventListener('keydown', function(e) {
-            if (e.key === 'Tab') {
-                if (e.shiftKey) {
-                    if (document.activeElement === navYesBtn) {
-                        e.preventDefault();
-                        navNoBtn.focus();
-                    }
-                } else {
-                    if (document.activeElement === navNoBtn) {
-                        e.preventDefault();
-                        navYesBtn.focus();
-                    }
-                }
-            }
-        });
-
-        navYesBtn.focus();
-
-        // Event listeners
+// Event listeners
         takeMokhBtn.addEventListener('click', takeMokh);
         browseMokhsBtn.addEventListener('click', toggleCollection);
         currentMokhEl.addEventListener('click', takeMokh);

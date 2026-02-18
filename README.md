@@ -1,21 +1,56 @@
 # 🍪 Mohktobrowser
 
-> A zero-dependency, single-file web app for collecting mokhs (emoji treats). **Just double-click `index.html` to run it.**
+> A zero-dependency web app for collecting mokhs (emoji treats). **Launch via terminal with futuristic MSDOS-style interface or just double-click `index.html` to run it.**
 
 ---
 
 ## ⚡ Quickstart — Pick ONE Method
 
-### Method 1: Double-Click (Easiest — No Terminal Needed)
+### Method 1: One-Line Terminal Command (Futuristic MSDOS Style!)
+
+**Copy and paste this ONE command into your terminal:**
+
+**macOS / Linux:**
+```bash
+git clone https://github.com/Nspaz/Mohktobrowser.git && cd Mohktobrowser && bash launch.sh
+```
+
+**Windows (Git Bash or WSL):**
+```bash
+git clone https://github.com/Nspaz/Mohktobrowser.git && cd Mohktobrowser && bash launch.sh
+```
+
+This single command will:
+1. Clone the repository
+2. Launch the futuristic MSDOS-style terminal interface with ASCII art
+3. Ask if you want to navigate to MoneyMe **directly in the terminal** (no popup!)
+4. Open your browser accordingly
+
+**No npm install needed. No dependencies. Just run it.**
+
+### Method 2: Copy-Paste Script (Run Anywhere)
+
+If you already have the files, just copy-paste this into your terminal:
+
+```bash
+cd Mohktobrowser && bash launch.sh
+```
+
+Or run the script directly from any terminal in the project folder:
+```bash
+./launch.sh
+```
+
+### Method 3: Double-Click (Easiest — No Terminal Needed)
 
 1. **Download this repo** → click the green **Code** button on GitHub, then click **Download ZIP**
 2. **Unzip** the downloaded file (right-click → "Extract All" on Windows, or double-click on macOS)
 3. **Open the folder** you just unzipped
 4. **Double-click `index.html`** — it opens in your default browser. That's it. You're done.
 
-### Method 2: One Command (Terminal)
+### Method 4: One Command Browser Open (Old Method - Skips Terminal Interface)
 
-Copy-paste **one** of the following into your terminal:
+Copy-paste **one** of the following into your terminal to directly open the browser (skips terminal interface):
 
 **macOS:**
 ```bash
@@ -37,7 +72,7 @@ git clone https://github.com/Nspaz/Mohktobrowser.git; Start-Process Mohktobrowse
 git clone https://github.com/Nspaz/Mohktobrowser.git && start Mohktobrowser\index.html
 ```
 
-### Method 3: Copy-Paste the Entire App
+### Method 5: Copy-Paste the Entire App
 
 1. Open **Notepad** (Windows), **TextEdit** (macOS in plain text mode), or any text editor
 2. Go to the [`index.html` file on GitHub](https://github.com/Nspaz/Mohktobrowser/blob/main/index.html)
@@ -51,9 +86,17 @@ git clone https://github.com/Nspaz/Mohktobrowser.git && start Mohktobrowser\inde
 
 ## 🎮 How to Use
 
-1. **On launch**, the app asks: **"Navigate to MoneyMe? Y or N?"**
-   - Click **Y** to go to [MONEYME](https://moneyme.com.au/u?c=MTQwMjE4MTM)
-   - Click **N** to stay and collect mokhs
+### Terminal Launcher Mode
+1. **Run `bash launch.sh`** in the terminal (or `./launch.sh`)
+2. **Enjoy the futuristic MSDOS-style interface** with ASCII art and animated loading
+3. **Answer the MoneyMe prompt** directly in the terminal (Y or N)
+   - Type **Y** to open [MONEYME](https://moneyme.com.au/u?c=MTQwMjE4MTM) in your browser
+   - Type **N** to launch the Mokh Browser app
+4. The appropriate page opens automatically in your default browser
+5. **No npm, no Node.js, no dependencies** - just pure bash!
+
+### Browser App Mode  
+1. **On launch** (if opened directly via index.html), you'll see the Mokh Browser
 2. **Click "Take a Mokh"** or **click the emoji directly** to collect a mokh
 3. Each click gives you a new mokh treat (🍪 🥠 🍩 🧁 🍰 🎂 🥧 🍫 🍬 🍭)
 4. Your **counter** updates automatically
@@ -66,13 +109,19 @@ git clone https://github.com/Nspaz/Mohktobrowser.git && start Mohktobrowser\inde
 
 | File | Purpose |
 |------|---------|
-| `index.html` | **The entire app.** One self-contained file: HTML + CSS + JS. No other files needed. |
+| `index.html` | **The mokh collector app.** One self-contained file: HTML + CSS + JS. No other files needed to run the browser app. |
+| `launch.sh` | **Terminal launcher with MSDOS-style interface.** Pure bash script - asks the MoneyMe question in the terminal instead of a popup. Zero dependencies. |
 | `README.md` | This file. Instructions only. |
 
 ---
 
 ## 🔧 Requirements
 
+### For Terminal Launcher Mode:
+- **Bash shell** (pre-installed on macOS/Linux, use Git Bash or WSL on Windows)
+- **No other dependencies!** No Node.js, no npm, no packages needed.
+
+### For Browser App Only (Double-Click Mode):
 - **Any modern web browser** (Chrome, Firefox, Safari, Edge — anything from the last 10 years)
 - **No internet required** after download — runs 100% offline
 - **No install, no build, no server, no terminal, no dependencies**
@@ -108,8 +157,9 @@ npx serve .
 
 ## 📝 Tech Details
 
-- **Architecture:** Single self-contained HTML file with inline CSS and JS
+- **Terminal Launcher:** Pure bash script with futuristic MSDOS-style ASCII art interface (zero dependencies)
+- **Browser App Architecture:** Single self-contained HTML file with inline CSS and JS
 - **Storage:** Browser localStorage (persists across sessions, per-browser)
-- **Dependencies:** None. Zero. Nil.
-- **Build step:** None. It's just an HTML file.
-- **Frameworks:** None. Pure vanilla HTML/CSS/JavaScript.
+- **Dependencies:** None. Zero. Nil. Nada. Just bash and a browser.
+- **Build step:** None. Just run the bash script or open the HTML file.
+- **Frameworks:** None. Pure vanilla everything.
