@@ -36,11 +36,6 @@ function saveState() {
     localStorage.setItem('mokhCollection', JSON.stringify(mokhCollection));
 }
 
-// Get a random mokh
-function getRandomMokh() {
-    return mokhTypes[Math.floor(Math.random() * mokhTypes.length)];
-}
-
 // Show next mokh
 function showNextMokh() {
     currentMokhIndex = (currentMokhIndex + 1) % mokhTypes.length;
