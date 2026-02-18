@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohktobrowser - Take a Mokh</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🍪 Mohktobrowser</h1>
+            <p class="subtitle">Take a mokh and enjoy!</p>
+        </header>
+
+        <main>
+            <div class="mokh-display">
+                <div id="mokhContainer" class="mokh-container">
+                    <div class="mokh" id="currentMokh">🍪</div>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button id="takeMokhBtn" class="btn btn-primary">Take a Mokh</button>
+                <button id="browseMokhsBtn" class="btn btn-secondary">Browse Mokhs</button>
+            </div>
+
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-label">Mokhs Taken:</span>
+                    <span id="mokhCount" class="stat-value">0</span>
+                </div>
+            </div>
+
+            <div id="mokhCollection" class="mokh-collection hidden">
+                <h2>Your Mokh Collection</h2>
+                <div id="collectionGrid" class="collection-grid"></div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Made with ❤️ and mokhs</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
