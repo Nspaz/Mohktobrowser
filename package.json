@@ -1,0 +1,17 @@
+{
+  "name": "mohktobrowser",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Beginner-friendly one-click Playwright mobile browser launcher",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "npm run build && node dist/bulletproof-octo-playwright-mobile.js"
+  },
+  "dependencies": {
+    "playwright": "1.55.1"
+  },
+  "devDependencies": {
+    "@types/node": "22.10.5",
+    "typescript": "5.7.3"
+  }
+}
