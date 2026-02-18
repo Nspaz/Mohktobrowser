@@ -101,7 +101,7 @@ async function main(): Promise<void> {
       browser = await chromium.launch({ headless: false });
     } catch (error: unknown) {
       const errorMessage = error instanceof Error ? error.message : String(error);
-      const isDisplayError = /\bdisplay\b/i.test(errorMessage) || /\bWAYLAND_DISPLAY\b/i.test(errorMessage);
+      const isDisplayError = /\bdisplay\b/i.test(errorMessage) || /\bwayland_display\b/i.test(errorMessage);
       console.log(
         color(
           COLORS.yellow,
@@ -127,7 +127,10 @@ async function main(): Promise<void> {
     console.log(color(COLORS.green, '[ok] Connected. Press Ctrl+C to close.'));
 
     await new Promise<void>((resolve) => {
-      process.once('SIGINT', () => {
+      process.on('SIGINT', () => {
+        if (closeRequested) {
+          return;
+        }
         closeRequested = true;
         console.log(color(COLORS.red, '\n[exit] Closing browser...'));
         resolve();
