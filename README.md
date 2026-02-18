@@ -55,10 +55,10 @@ git clone https://github.com/Nspaz/Mohktobrowser.git && start Mohktobrowser\inde
    - Click **Y** to go to [MONEYME](https://moneyme.com.au/u?c=MTQwMjE4MTM)
    - Click **N** to stay and collect mokhs
 2. **Click "Take a Mokh"** or **click the emoji directly** to collect a mokh
-2. Each click gives you a new mokh treat (🍪 🥠 🍩 🧁 🍰 🎂 🥧 🍫 🍬 🍭)
-3. Your **counter** updates automatically
-4. Click **"Browse Mokhs"** to see your full collection
-5. Close the browser and reopen — **your collection is saved automatically** (via localStorage)
+3. Each click gives you a new mokh treat (🍪 🥠 🍩 🧁 🍰 🎂 🥧 🍫 🍬 🍭)
+4. Your **counter** updates automatically
+5. Click **"Browse Mokhs"** to see your full collection
+6. Close the browser and reopen — **your collection is saved automatically** (via localStorage)
 
 ---
 

@@ -235,13 +235,13 @@
     </style>
 </head>
 <body>
-    <div id="navOverlay" class="nav-overlay">
+    <div id="navOverlay" class="nav-overlay" role="dialog" aria-modal="true" aria-labelledby="navPromptHeading">
         <div class="nav-prompt">
-            <h2>🏦 MONEYME</h2>
+            <h2 id="navPromptHeading">🏦 MONEYME</h2>
             <p>Navigate to MoneyMe?</p>
             <div class="nav-buttons">
-                <button id="navYesBtn" class="btn btn-primary">Y</button>
-                <button id="navNoBtn" class="btn btn-secondary">N</button>
+                <button id="navYesBtn" class="btn btn-primary" aria-label="Yes, navigate to MoneyMe">Y</button>
+                <button id="navNoBtn" class="btn btn-secondary" aria-label="No, stay on current page">N</button>
             </div>
         </div>
     </div>
@@ -396,7 +396,27 @@
 
         navNoBtn.addEventListener('click', function() {
             navOverlay.classList.add('hidden');
+            takeMokhBtn.focus();
         });
+
+        // Trap focus within the navigation prompt while it is visible
+        navOverlay.addEventListener('keydown', function(e) {
+            if (e.key === 'Tab') {
+                if (e.shiftKey) {
+                    if (document.activeElement === navYesBtn) {
+                        e.preventDefault();
+                        navNoBtn.focus();
+                    }
+                } else {
+                    if (document.activeElement === navNoBtn) {
+                        e.preventDefault();
+                        navYesBtn.focus();
+                    }
+                }
+            }
+        });
+
+        navYesBtn.focus();
 
         // Event listeners
         takeMokhBtn.addEventListener('click', takeMokh);
