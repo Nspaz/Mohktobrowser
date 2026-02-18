@@ -96,6 +96,7 @@ async function main(): Promise<void> {
   const { chromium } = await import('playwright');
   let browser: Browser | undefined;
   let closeRequested = false;
+  let sigintHandler: (() => void) | undefined;
   try {
     try {
       browser = await chromium.launch({ headless: false });
@@ -127,16 +128,20 @@ async function main(): Promise<void> {
     console.log(color(COLORS.green, '[ok] Connected. Press Ctrl+C to close.'));
 
     await new Promise<void>((resolve) => {
-      process.on('SIGINT', () => {
+      sigintHandler = () => {
         if (closeRequested) {
           return;
         }
         closeRequested = true;
         console.log(color(COLORS.red, '\n[exit] Closing browser...'));
         resolve();
-      });
+      };
+      process.on('SIGINT', sigintHandler);
     });
   } finally {
+    if (sigintHandler) {
+      process.off('SIGINT', sigintHandler);
+    }
     if (browser) {
       try {
         await browser.close();
@@ -146,7 +151,7 @@ async function main(): Promise<void> {
       }
     }
     if (closeRequested) {
-      process.exit(0);
+      process.exitCode = 0;
     }
   }
 }
