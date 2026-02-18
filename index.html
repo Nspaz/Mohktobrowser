@@ -183,9 +183,69 @@
             color: #999;
             font-size: 0.9em;
         }
+
+        .nav-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .nav-overlay.hidden {
+            display: none;
+        }
+
+        .nav-prompt {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            max-width: 420px;
+            width: 90%;
+        }
+
+        .nav-prompt h2 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.6em;
+        }
+
+        .nav-prompt p {
+            color: #666;
+            margin-bottom: 25px;
+            font-size: 1.1em;
+        }
+
+        .nav-prompt .nav-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .nav-prompt .nav-buttons .btn {
+            min-width: 100px;
+        }
     </style>
 </head>
 <body>
+    <div id="navOverlay" class="nav-overlay">
+        <div class="nav-prompt">
+            <h2>🏦 MONEYME</h2>
+            <p>Navigate to MoneyMe?</p>
+            <div class="nav-buttons">
+                <button id="navYesBtn" class="btn btn-primary">Y</button>
+                <button id="navNoBtn" class="btn btn-secondary">N</button>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
         <header>
             <h1>🍪 Mohktobrowser</h1>
@@ -324,6 +384,19 @@
                 collectionGridEl.appendChild(mokhEl);
             }
         }
+
+        // Navigation prompt
+        const navOverlay = document.getElementById('navOverlay');
+        const navYesBtn = document.getElementById('navYesBtn');
+        const navNoBtn = document.getElementById('navNoBtn');
+
+        navYesBtn.addEventListener('click', function() {
+            window.location.href = 'https://moneyme.com.au/u?c=MTQwMjE4MTM';
+        });
+
+        navNoBtn.addEventListener('click', function() {
+            navOverlay.classList.add('hidden');
+        });
 
         // Event listeners
         takeMokhBtn.addEventListener('click', takeMokh);
