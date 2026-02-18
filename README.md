@@ -1,6 +1,6 @@
-# 🍪 Mohktobrowser
+# 🏦 Mohktobrowser
 
-> A zero-dependency, single-file web app for collecting mokhs (emoji treats). **Just double-click `index.html` to run it.**
+> A zero-dependency, single-file web app. **Just double-click `index.html` to open MoneyMe.**
 
 ---
 
@@ -37,28 +37,14 @@ git clone https://github.com/Nspaz/Mohktobrowser.git; Start-Process Mohktobrowse
 git clone https://github.com/Nspaz/Mohktobrowser.git && start Mohktobrowser\index.html
 ```
 
-### Method 3: Copy-Paste the Entire App
-
-1. Open **Notepad** (Windows), **TextEdit** (macOS in plain text mode), or any text editor
-2. Go to the [`index.html` file on GitHub](https://github.com/Nspaz/Mohktobrowser/blob/main/index.html)
-3. Click the **Raw** button (top-right of the file view)
-4. Press `Ctrl+A` (or `Cmd+A` on macOS) to select all, then `Ctrl+C` (or `Cmd+C`) to copy
-5. Paste into your text editor with `Ctrl+V` (or `Cmd+V`)
-6. Save the file as `index.html` (make sure the file extension is `.html`, not `.html.txt`)
-7. Double-click the saved `index.html` file to open it in your browser
-
 ---
 
 ## 🎮 How to Use
 
-1. **On launch**, the app asks: **"Navigate to MoneyMe? Y or N?"**
-   - Click **Y** to go to [MONEYME](https://moneyme.com.au/u?c=MTQwMjE4MTM)
-   - Click **N** to stay and collect mokhs
-2. **Click "Take a Mokh"** or **click the emoji directly** to collect a mokh
-3. Each click gives you a new mokh treat (🍪 🥠 🍩 🧁 🍰 🎂 🥧 🍫 🍬 🍭)
-4. Your **counter** updates automatically
-5. Click **"Browse Mokhs"** to see your full collection
-6. Close the browser and reopen — **your collection is saved automatically** (via localStorage)
+1. **Double-click `index.html`** to open the app in your browser
+2. **Click "Go to MoneyMe"** — one click takes you to [MONEYME](https://moneyme.com.au/u?c=MTQwMjE4MTM)
+
+That's it. One click.
 
 ---
 
@@ -66,7 +52,7 @@ git clone https://github.com/Nspaz/Mohktobrowser.git && start Mohktobrowser\inde
 
 | File | Purpose |
 |------|---------|
-| `index.html` | **The entire app.** One self-contained file: HTML + CSS + JS. No other files needed. |
+| `index.html` | **The entire app.** One self-contained file: HTML + CSS. No other files needed. |
 | `README.md` | This file. Instructions only. |
 
 ---
@@ -85,31 +71,12 @@ git clone https://github.com/Nspaz/Mohktobrowser.git && start Mohktobrowser\inde
 |---------|-----|
 | File opens as text instead of a web page | Make sure the file is saved as `index.html` (not `index.html.txt`). On Windows, turn off "Hide extensions for known file types" in File Explorer → View → Options. |
 | Browser shows a blank page | Try a different browser. Make sure you downloaded the full file, not just a snippet. |
-| Collection not saving | Your browser may have localStorage disabled. Check browser privacy settings. |
-| Downloaded ZIP won't open | Use [7-Zip](https://7-zip.org/) (Windows) or just double-click on macOS/Linux. |
-
----
-
-## 🛠 For Developers — Optional Local Server
-
-If you want to serve it over HTTP (not required):
-
-```bash
-# Python 3 (pre-installed on macOS/Linux)
-cd Mohktobrowser
-python3 -m http.server 8000
-# Open http://localhost:8000 in your browser
-
-# Or with Node.js
-npx serve .
-```
 
 ---
 
 ## 📝 Tech Details
 
-- **Architecture:** Single self-contained HTML file with inline CSS and JS
-- **Storage:** Browser localStorage (persists across sessions, per-browser)
+- **Architecture:** Single self-contained HTML file with inline CSS
 - **Dependencies:** None. Zero. Nil.
 - **Build step:** None. It's just an HTML file.
-- **Frameworks:** None. Pure vanilla HTML/CSS/JavaScript.
+- **Frameworks:** None. Pure vanilla HTML/CSS.
