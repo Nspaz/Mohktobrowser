@@ -12,6 +12,8 @@ This repository now includes `bulletproof-octo-playwright-mobile.ts`, a beginner
 
 ### Run
 
+Requires **Node.js 18+**.
+
 ```bash
 npm install
 npm start
